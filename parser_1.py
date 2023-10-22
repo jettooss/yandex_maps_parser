@@ -14,7 +14,7 @@ class Parser:
 
         self.driver = driver
 
-    def scroll_to_bottom(self, elem, scr,key) -> None:
+    def scroll_to_bottom(self, elem, scr) -> None:
         # Метод выполняет прокрутку до конца страницы
 
         self.driver.execute_script(
@@ -176,7 +176,7 @@ class Parser:
             print(review)
 
 
-        self.save_to_file(reviews_list, 'Furious11.json')
+        self.save_to_file(reviews_list, 'file_name.json')
 
     @staticmethod
     def save_to_file(data, filename):
@@ -201,8 +201,8 @@ class Parser:
 vtb_bank_url: str = 'https://yandex.ru/maps/213/moscow/chain/bank_vtb_otdelenya/6002211/filter/chain_id/6002211/?ll=37.618171%2C55.845814&sctx=ZAAAAAgBEAAaKAoSCZ5eKcsQz0JAEdOgaB7A4EtAEhIJA137Anqh8j8RmPxP%2Fu4d7D8iBgABAgMEBSgAOABAAUgBYipjb2xsZWN0aW9uc19yYW5raW5nX21vZGVsPWNvbGxlY3Rpb25zX2Rzc21qAnJ1ggEQY2hhaW5faWQ6NjAwMjIxMZ0BzcxMPaABAKgBAL0BK7Ps5MIBhwGx09%2FQBNX28ocEhZbrqgX967C0Be6v07WPBd6d9KR4wojU9sAEqKWKxQTZucPcBYT%2F4uG7A4238IKwA9qH6OUDyKHiowWJp7uOuQO1%2Fqn68gG2yrCMBauq6NGCBtD29Plu8NnBpr4E1PGUvJUD7PvmpwT4neWGBuiehvgDtPTc3akDuZKvzQTqAQDyAQD4AQCCAhBjaGFpbl9pZDo2MDAyMjExigIAkgIAmgIMZGVza3RvcC1tYXBzqgKXATYwMDIyMTEsNjE5NDI3MjYxLDYwMDE5NDcsNjAwMjQwNSw2MDAzNTI5LDc3MTE1ODA1MSw2MDAyMTU3LDgwNTU1MDk1Myw2MDAyMjU0LDgzMDg5MTkxMiwzMTg0MjYyNDQsMTkzNjEwODczMjUsMTg4NjEyMTg2LDYwMDE5OTMsNjAwMjM1Miw2MDAzMzk5LDYwMDIxMjSwAgE%3D&sll=37.618171%2C55.845814&sspn=0.604997%2C0.550648&z=10.57'
 
 opts = webdriver.ChromeOptions()
-opts.add_argument('headless')
-opts.add_argument('--disable-gpu')
+# opts.add_argument('headless')
+# opts.add_argument('--disable-gpu')
 opts.add_argument(
     'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36')
 driver = webdriver.Chrome(options=opts)
